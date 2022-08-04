@@ -61,14 +61,7 @@ public class Robot extends TimedRobot {
         counter.setMaxPeriod(1.0);
         counter.setSemiPeriodMode(true);
         counter.reset();
-        m_chooser.setDefaultOption("Bounce Path", "Bounce");
-        m_chooser.addOption("Slalom path", "Slalom");
-        m_chooser.addOption("Barrel Racing Path", "Barrel");
-        m_chooser.addOption("Galactic Search B - Red", "BRed");
-        m_chooser.addOption("Galactic Search B - Blue", "BBlue");
-        m_chooser.addOption("Galactic Search A - Red (Green)", "ARed");
-        m_chooser.addOption("Galactic Search A - Blue (White)", "ABlue");
-        SmartDashboard.putData("Auto Choices", m_chooser);
+        
         CameraServer.startAutomaticCapture("Shooting Camera", 0);
         CameraServer.startAutomaticCapture("Collecting Camera", 1);
     }
@@ -82,10 +75,7 @@ public class Robot extends TimedRobot {
     }
 
     @Override
-    public void autonomousPeriodic() {
-
-        
-    } 
+    public void autonomousPeriodic() {}
     
     @Override
     public void teleopInit() {
@@ -155,17 +145,6 @@ public class Robot extends TimedRobot {
         if (controllerDriver.getRawButtonPressed(Constants.bResetScrew))
             m_screw.resetScrew(); // set current screw position as 0 on encoder (for testing purposes only)
 
-        //Something is wrong with the wheel: It's not connected for some reason
-        //We'll comment this out to prevent a null pointer until we can fix a problem
-        /*if (controllerDriver.getRawButtonPressed(Constants.bPositionControl)) {
-            m_wheel.positionControl();//Color wheel go to set position
-        }
-        if (controllerDriver.getRawButtonPressed(Constants.bRotationControl)) {
-            m_wheel.rotationControl();//Color Wheel spin 3-5 times
-        }
-        if (controllerDriver.getRawButtonPressed(Constants.bStopWheel)) {
-            m_wheel.stopWheel();
-        }*/
         if (controllerDriver.getRawButtonPressed(Constants.bIntakeToggle)) {
             m_intake.setIntake(!m_intake.getIntake());
             m_index.setSpitting(false);
@@ -199,13 +178,6 @@ public class Robot extends TimedRobot {
         else if (controllerDriver.getRawButtonPressed(Constants.bDriving)) {
             setStatus("Driving", false);
         }
-        /* Untested and liable to break. Kindly don't use.
-        else if (controllerDriver.getRawButtonPressed(Constants.bLoading)) {
-            setStatus("Loading", true);
-        }*/
-
-        //limelight LED testing
-        //m_limelight.setLED(controllerDriver.getRawButton(7));
     }
 
     private double getDistance() {//Returns distance from front of the robot to wall
@@ -280,7 +252,7 @@ public class Robot extends TimedRobot {
             currentlyShooting = true;
         }
         if (currentlyShooting) {
-            m_shooter.startShooter(true);
+            m_shooter.startShooter(false);
             m_index.setEjecting(m_shooter.getEjecting());
         }
 
