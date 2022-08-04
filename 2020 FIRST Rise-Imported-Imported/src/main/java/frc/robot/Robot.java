@@ -9,8 +9,8 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-// import com.analog.adis16470.frc.ADIS16470_IMU;
-// import com.analog.adis16470.frc.ADIS16470_IMU.IMUAxis;
+import edu.wpi.first.wpilibj.ADIS16470_IMU;
+import edu.wpi.first.wpilibj.ADIS16470_IMU.IMUAxis;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.motorcontrol.Victor;
 import edu.wpi.first.wpilibj.Counter;
@@ -23,9 +23,8 @@ public class Robot extends TimedRobot {
     private Victor m_left, m_right;
     private DifferentialDrive m_drive;
     private double vTranslational, vRotational = 0;
-    private String drivingStatus, autoStrategy;
+    private String drivingStatus;
     private SendableChooser<String> m_chooser = new SendableChooser<>();
-    private int timer;
     private double integral, error,setpoint, derivative, previousError = 0;
     private boolean aligned, currentlyShooting;
 
@@ -36,7 +35,7 @@ public class Robot extends TimedRobot {
     private Climber m_climber;
     private Wheel m_wheel;
     private Counter counter;
-//    private ADIS16470_IMU m_gyro;
+    private ADIS16470_IMU m_gyro;
     private Limelight m_limelight;
 
     @Override
@@ -55,7 +54,7 @@ public class Robot extends TimedRobot {
         m_intake = new Intake();
         m_shooter = new Shooter();
         m_screw = new Screw();
-//        m_gyro = new ADIS16470_IMU();
+        m_gyro = new ADIS16470_IMU();
         m_limelight = new Limelight();
         
         counter = new Counter(Constants.DIO_LIDAR);
@@ -76,178 +75,16 @@ public class Robot extends TimedRobot {
 
     @Override
     public void autonomousInit() {
-        timer = 0;
         setStatus("Auto", false);
-//        m_gyro.setYawAxis(IMUAxis.kY);
-//       m_gyro.reset();
-        autoStrategy = m_chooser.getSelected();
+        m_gyro.setYawAxis(IMUAxis.kY);
+        m_gyro.reset();
         m_drive.setSafetyEnabled(false);
     }
 
     @Override
     public void autonomousPeriodic() {
 
-        //Galactic Search Timer
-        timer++;
-//        System.out.println("Timer: " + timer + ", gyro: " + m_gyro.getAngle() + ", vRotational: " + vRotational);
-        m_index.mainMethod();
-        /*
-        switch(autoStrategy){
-            case "BRed":
-                // GALACTIC SEARCH LAYOUT PATH B - RED
-                if(timer >= 2 && timer < 60){
-                    driveCurve(1, vRotational);
-                } else if (timer < 260) {
-                    driveCurve(0.75, vRotational);
-                } else if (timer < 370) {
-                    driveCurve(1, vRotational);
-                } else {
-                    driveCurve(0, vRotational);
-                }
-
-                //rotation instructions
-                if(timer >= 63 && m_gyro.getAngle() < 15 && timer < 150){ //(timer >= 63 && timer < 80)
-                    driveCurve(vTranslational, 1);
-                } else if (timer >= 150 && m_gyro.getAngle() > -14 && timer < 255) { //(timer >= 150 && timer < 193)
-                    driveCurve(vTranslational, -1);
-                } else if (timer >= 255 && m_gyro.getAngle() < -30 && timer < 300){ //(timer >= 255 && timer < 277)
-                    driveCurve(vTranslational, 1);
-                } else {
-                    driveCurve(vTranslational, 0);
-                }
-            break;
-
-            case "BBlue":
-                //GALACTIC SEARCH LAYOUT PATH B - BLUE
-                if (timer < 130) {
-                    driveCurve(1, vRotational);
-                } else if (timer < 370) {
-                    driveCurve(0.75, vRotational);
-                } else if (timer < 420) {
-                    driveCurve(1, vRotational);
-                } else {
-                    driveCurve(0,vRotational);
-                }
-
-                //rotation instructions
-                if (timer >= 130 && m_gyro.getAngle() > -15 && timer < 200){ //(timer >= 63 && timer < 80)
-                    driveCurve(vTranslational, -1);
-                } else if (timer >= 240 && m_gyro.getAngle() < 15 && timer < 300) { //(timer >= 150 && timer < 193)
-                    driveCurve(vTranslational, 1);
-                } else if (timer >= 360 && m_gyro.getAngle() > 30 && timer < 400){ //(timer >= 255 && timer < 277)
-                    driveCurve(vTranslational, -1);
-                } else {
-                    driveCurve(vTranslational, 0);
-                }
-                break;
-
-            case "ARed":
-                //GALACTIC SEARCH LAYOUT PATH A - RED
-                if (timer < 55) {
-                    driveCurve(1, vRotational);
-                } else if (timer < 135) {
-                    driveCurve(0.75, vRotational);
-                } else {
-                    driveCurve(0,vRotational);
-                }
-
-                //rotation instructions
-                if (timer >= 55 && m_gyro.getAngle() < 4 && timer < 135){ 
-                    driveCurve(vTranslational, 1);
-                } else {
-                    driveCurve(vTranslational, 0);
-                }
-                break;
-
-            case "Barrel":
-                //BARREL RACING PATH
-                if (timer < 1010) {
-                    driveCurve(1, vRotational);
-                } else {
-                    driveCurve(0,vRotational);
-                }
-
-                //rotation instructions
-                if (m_gyro.getAngle() > -1 && timer < 50){ 
-                    driveCurve(vTranslational, -0.25);
-                } else if (timer >= 118 && m_gyro.getAngle() < 340 && timer < 405){ 
-                    driveCurve(vTranslational, 0.60);
-                } else if (timer >= 405 && m_gyro.getAngle() > 60 && timer < 685){ 
-                    driveCurve(vTranslational, -0.65);
-                } else if (timer >= 685 && m_gyro.getAngle() > -165 && timer < 1010){ 
-                    driveCurve(vTranslational, -0.65);
-                } else if (timer >= 750 && m_gyro.getAngle() > -180 && timer < 1010){
-                    driveCurve(vTranslational, -0.25);
-                } else {
-                    driveCurve(vTranslational, 0);
-                }
-                break;
-            case "Slalom":
-                //SLALOM RACING PATH
-                if(timer < 750){
-                    driveCurve(1, vRotational);
-                } else {
-                    driveCurve(0, vRotational);
-                }
-
-                //rotation instructions
-                if (timer > 25 && m_gyro.getAngle() > -53 && timer < 90){ 
-                    driveCurve(vTranslational, -1);
-                } else if (timer >= 90 && m_gyro.getAngle() < -46.5 && timer < 200){ 
-                    driveCurve(vTranslational, 1);
-                } else if (timer >= 225 && m_gyro.getAngle() < 45 && timer < 255){ 
-                    driveCurve(vTranslational, 1);
-                } else if (timer >= 257 && m_gyro.getAngle() > -250 && timer < 480){ 
-                    driveCurve(vTranslational, -0.72);
-                } else if (timer >= 480 && m_gyro.getAngle() < -230 && timer < 580){ 
-                    driveCurve(vTranslational, 1);
-                } else if (timer >= 613 && m_gyro.getAngle() < -125 && timer < 650){ 
-                    driveCurve(vTranslational, 1);
-                } else if (timer >= 655 && m_gyro.getAngle() > -150 && timer < 750){ 
-                    driveCurve(vTranslational, -1);
-                } else {
-                    driveCurve(vTranslational, 0);
-                }
-            break;
-
-                case "Bounce":
-                //BOUNCE RACING PATH
-                if (timer < 125) {
-                    driveCurve(0.75, vRotational);
-                } else if (timer < 480) {
-                    driveCurve(-0.75, vRotational);
-                } else if (timer < 875) {
-                    driveCurve(0.75, vRotational); //adjust for drift
-                } else if (timer < 1020) {
-                    driveCurve(-0.75, vRotational);
-                } else {
-                    driveCurve(0,vRotational);
-                }
-
-                //rotation instructions
-                if (timer > 20 && m_gyro.getAngle() > -80 && timer < 120){ 
-                    driveCurve(vTranslational, -0.50);
-                } else if (timer > 155 && m_gyro.getAngle() > -110 && timer < 230){
-                    driveCurve(vTranslational, -0.50);
-                } else if (timer > 260 && m_gyro.getAngle() > -258 && timer < 480){
-                    driveCurve(vTranslational, -0.57);
-                } else if (timer > 480 && m_gyro.getAngle() > -265 && timer < 590){
-                    driveCurve(vTranslational, -0.25);
-                } else if (timer > 585 && m_gyro.getAngle() > -350 && timer < 690){
-                    driveCurve(vTranslational, -0.5);
-                } else if (timer > 697 && m_gyro.getAngle() > -440 && timer < 860){
-                    driveCurve(vTranslational, -0.5);
-                } else if (timer > 925 && m_gyro.getAngle() > -530 && timer < 1000){
-                    driveCurve(vTranslational, -0.75);
-                } else {
-                    driveCurve(vTranslational, 0);
-                }
-                default:
-        }
-
-        //Galactic Search Drive
-        m_drive.arcadeDrive(-vRotational, -vTranslational, false);
-        */
+        
     } 
     
     @Override
@@ -456,6 +293,5 @@ public class Robot extends TimedRobot {
     @Override
     public void disabledInit(){
         m_limelight.setLED(false);
-        timer = 0;
     }
 }

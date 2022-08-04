@@ -1,18 +1,18 @@
 package frc.robot;
 
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj.motorcontrol.Victor;
 
 public class Shooter {
     private Victor m_shooterLeft;
     private Victor m_shooterRight;
-    private SpeedControllerGroup m_shooter;
+    private MotorControllerGroup m_shooter;
     private int timer;
     
     public Shooter() {
         m_shooterLeft = new Victor(Constants.PWM_BallShooterL); 
         m_shooterRight = new Victor(Constants.PWM_BallShooterR);
-        m_shooter = new SpeedControllerGroup(m_shooterLeft, m_shooterRight);
+        m_shooter = new MotorControllerGroup(m_shooterLeft, m_shooterRight);
         timer = 0;
     }
     /**

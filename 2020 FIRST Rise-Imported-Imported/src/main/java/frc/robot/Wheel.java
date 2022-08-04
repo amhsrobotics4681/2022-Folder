@@ -21,12 +21,11 @@ public class Wheel {
     private final ColorMatch m_colorMatcher = new ColorMatch();
     private Victor m_motor;
     // below kColors have been tested in portables, proximity = 33
-    /*
-    private final Color kBlue = ColorMatch.makeColor(0.16, 0.44, 0.38);
-    private final Color kGreen = ColorMatch.makeColor(0.21, 0.52, 0.26);
-    private final Color kRed = ColorMatch.makeColor(0.43, 0.39, 0.17);
-    private final Color kYellow = ColorMatch.makeColor(0.30, 0.54, 0.14);
-    /*/
+    private final Color kBlue = new Color(0.16, 0.44, 0.38);
+    private final Color kGreen = new Color(0.21, 0.52, 0.26);
+    private final Color kRed = new Color(0.43, 0.39, 0.17);
+    private final Color kYellow = new Color(0.30, 0.54, 0.14);
+    
     private String status = "Stationary";
     private String targetColor;
     private final int kTargetRevolutions = 4;
@@ -35,17 +34,17 @@ public class Wheel {
     private int numPanelShifted;
     private int numPanelShiftNeeded;   
 
-    public void wheelInit() {/*
+    public void wheelInit() {
         m_colorMatcher.addColorMatch(kBlue);
         m_colorMatcher.addColorMatch(kGreen);
         m_colorMatcher.addColorMatch(kRed);
         m_colorMatcher.addColorMatch(kYellow);
         m_motor = new Victor(Constants.PWM_Wheel); 
-        currentColor = getColor();*/
+        currentColor = getColor();
     }
         
     //Gets the color that is currently being detected
-    public String getColor() {/*
+    public String getColor() {
         Color detectedColor = m_colorSensor.getColor();
         String colorString;
         ColorMatchResult match = m_colorMatcher.matchClosestColor(detectedColor);
@@ -61,8 +60,7 @@ public class Wheel {
         } else {
             colorString = "Unknown";
         }
-        return colorString;*/
-        return "";
+        return colorString;
     }
 
     public void rotationControl(){ //Starts motor and sets target rotations
