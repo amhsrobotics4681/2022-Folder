@@ -61,7 +61,7 @@ public class Constants {
     public static final double kSpitSpeed = 1; //(not) neg
     public static final double kIndexSpeed = -0.6; // neg
     public static final double kEjectionSpeed = -0.5; // neg
-    public static final double kShooterSpeed = 0.5; //was 0.8
+    public static final double kShooterSpeed = 0.9; //was 0.8
     public static final double kAutonomousShooterSpeed = .6;
     public static final double kRotationSpeed = 0.5;
     public static final double kPositionSpeed = 0.2;

@@ -19,11 +19,12 @@ public class Screw {
         return m_screw.getSelectedSensorPosition();
     }
 
-    public void setSpeed(double speed) {
-        if (m_screwStop.get()) {
+    public void setSpeed(double speed) { // negative is leaning back
+        if (m_screwStop.get() && speed < 0) {
             m_screw.set(ControlMode.PercentOutput, 0);
         } else {
             m_screw.set(ControlMode.PercentOutput, speed);
+            System.out.println(speed);
         }
     }
 
