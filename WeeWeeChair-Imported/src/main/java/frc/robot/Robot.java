@@ -6,6 +6,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.Compressor; 
@@ -22,13 +23,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends TimedRobot {
   PWMVictorSPX m1 = new PWMVictorSPX(0);
   PWMVictorSPX m2 = new PWMVictorSPX(1);
-  Joystick controller = new Joystick(3);
+  Joystick controller = new Joystick(0);
   SendableChooser<String> chooser = new SendableChooser<>();
   SendableChooser<String> timeChooser = new SendableChooser<>();
 
   boolean locked = false;
   double speed = .6;
-  double multiplier = 0.8;
+  double multiplier = 1.0;
 
   double rodeoSpeedLeft = 0.6;
   double rodeoSpeedRight = 0.6;
@@ -45,10 +46,10 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    /*compressor = new Compressor();
-    right = new Solenoid(0);
-    left = new Solenoid(1);
-    compressor.start(); */
+    compressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
+    right = new Solenoid(PneumaticsModuleType.CTREPCM, 0);
+    left = new Solenoid(PneumaticsModuleType.CTREPCM, 1);
+    compressor.enableDigital();
 
     chooser.setDefaultOption("Para Cobardes", "lento");
     chooser.addOption("Para Desesperados", "rapido");
@@ -100,7 +101,7 @@ public class Robot extends TimedRobot {
       boolean mode = chooser.getSelected().equals("rapido");
       speed = mode ? 1 : speed;
       m2.set(controller.getRawAxis(1) * -speed * multiplier);
-      m1.set(controller.getRawAxis(5) * speed);
+      m1.set(controller.getRawAxis(3) * speed);
     } else {
       m2.set(0.0);
       m1.set(0.0);
@@ -164,5 +165,10 @@ public class Robot extends TimedRobot {
   public void testInit() {}
 
   @Override
-  public void testPeriodic() {}
+  public void testPeriodic() {
+      m2.set(controller.getRawAxis(1));
+      m1.set(controller.getRawAxis(3));
+      right.set(controller.getRawButtonPressed(1));
+      left.set(controller.getRawButtonPressed(2));
+  }
 }
