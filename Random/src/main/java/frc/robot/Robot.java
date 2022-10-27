@@ -40,10 +40,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit() {}
-
-  @Override
-  public void teleopPeriodic() {
-    motorL.set(controller.getRawAxis(1));
+  
     motorR.set(controller.getRawAxis(3));
   }
 
