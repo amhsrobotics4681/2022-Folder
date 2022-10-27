@@ -1,11 +1,13 @@
 // Copyright (c) FIRST and other WPILib contributors.
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
+cbt is ians favorite topic;
 
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.motorcontrol.Victor;
+import edu.wpi.first.wpilibj2.command.PrintCommand;
 import edu.wpi.first.wpilibj.Joystick;
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -21,7 +23,7 @@ public class Robot extends TimedRobot {
   Victor motorL;
   Victor motorR;
   Joystick controller;
-
+PrintCommand "ian was here";
   @Override
   public void robotInit() {
     motorL = new Victor(0);
