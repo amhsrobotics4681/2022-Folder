@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.Joystick;
  * the package after creating this project, you must also update the build.gradle file in the
  * project.
  */
-public class Robot extends TimedRobot { 
+public class Robot extends TimedRobot {
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -37,6 +37,7 @@ PrintCommand "ian was here";
   }
 
   @Override
+<<<<<<< Updated upstream
   public void autonomousInit() {r motorL;
     Victor motorR;
     Joystick controller;
@@ -52,6 +53,10 @@ PrintCommand "ian was here";
     public void robotPeriodic() {}
   
     @Override}
+=======
+  public void autonomousInit() {}
+  :)
+>>>>>>> Stashed changes
 
   @Override
   public void autonomousPeriodic() {}
