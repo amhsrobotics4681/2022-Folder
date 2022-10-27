@@ -33,7 +33,21 @@ public class Robot extends TimedRobot {
   public void robotPeriodic() {}
 
   @Override
-  public void autonomousInit() {}
+  public void autonomousInit() {r motorL;
+    Victor motorR;
+    Joystick controller;
+  
+    @Override
+    public void robotInit() {
+      motorL = new Victor(0);
+      motorR = new Victor(1);
+      controller = new Joystick(0);
+    }
+  
+    @Override
+    public void robotPeriodic() {}
+  
+    @Override}
 
   @Override
   public void autonomousPeriodic() {}
