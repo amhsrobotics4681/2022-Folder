@@ -35,6 +35,7 @@ PrintCommand "ian was here";
   public void robotPeriodic() {}
 
   @Override
+<<<<<<< Updated upstream
   public void autonomousInit() {r motorL;
     Victor motorR;
     Joystick controller;
@@ -50,6 +51,10 @@ PrintCommand "ian was here";
     public void robotPeriodic() {}
   
     @Override}
+=======
+  public void autonomousInit() {}
+  :)
+>>>>>>> Stashed changes
 
   @Override
   public void autonomousPeriodic() {}
