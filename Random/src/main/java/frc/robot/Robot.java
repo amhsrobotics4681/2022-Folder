@@ -1,11 +1,13 @@
 // Copyright (c) FIRST and other WPILib contributors.
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
-anything you want
+cbt is ians favorite topic;
+
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.motorcontrol.Victor;
+import edu.wpi.first.wpilibj2.command.PrintCommand;
 import edu.wpi.first.wpilibj.Joystick;
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -21,7 +23,7 @@ public class Robot extends TimedRobot {
   Victor motorL;
   Victor motorR;
   Joystick controller;
-
+PrintCommand "ian was here";
   @Override
   public void robotInit() {
     motorL = new Victor(0);
@@ -30,10 +32,31 @@ public class Robot extends TimedRobot {
   }
 
   @Override
-  public void robotPeriodic() {}
+  public void robotPeriodic() {
+
+  }
 
   @Override
+<<<<<<< Updated upstream
+  public void autonomousInit() {r motorL;
+    Victor motorR;
+    Joystick controller;
+  
+    @Override
+    public void robotInit() {
+      motorL = new Victor(0);
+      motorR = new Victor(1);
+      controller = new Joystick(0);
+    }
+  
+    @Override
+    public void robotPeriodic() {}
+  
+    @Override}
+=======
   public void autonomousInit() {}
+  :)
+>>>>>>> Stashed changes
 
   @Override
   public void autonomousPeriodic() {}
@@ -64,4 +87,14 @@ public class Robot extends TimedRobot {
 
   @Override
   public void simulationPeriodic() {}
+
+  public static void main(String[] args) {
+    try (Robot Bot2 = new Robot()) {
+      Bot2.robotInit();
+      Bot2.robotPeriodic();
+      Bot2.disabledInit();
+    }
+  }
+
+
 }

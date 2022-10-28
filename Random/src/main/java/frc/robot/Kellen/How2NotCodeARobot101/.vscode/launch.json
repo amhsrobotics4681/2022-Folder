@@ -6,10 +6,10 @@
   "configurations": [
     {
       "type": "java",
-      "name": "Launch Robot",
+      "name": "Launch Main",
       "request": "launch",
-      "mainClass": "frc.robot.Robot",
-      "projectName": "Random"
+      "mainClass": "frc.robot.Main",
+      "projectName": "How2NotCodeARobot101"
     },
     {
       "type": "wpilib",
