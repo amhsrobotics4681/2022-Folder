@@ -1,5 +1,6 @@
 ### Remaining Pre-Season Meeting Dates and Goals:
-* R 11/3 - Mock Kickoff. Design robot, then prepare code framework.
+* R 11/3 - Mock Kickoff. Design robot, then prepare code framework.  
+There is no meeting on S 11/5. You may attend the open house on U 11/6, from 12 to 4 pm.
 * R 11/10 - Loops and control structures.
 * S 11/12 - Components 1: Compressor, Solenoid, Camera
 * R 11/17 - Components 2: Gyroscope/IMU, Ultrasonic Distance Sensor
@@ -21,3 +22,28 @@ We will meet together at AMHS and watch the game reveal together. Next, we set g
 **Competition 1 - Glacier Peak, F 3/3 to U 3/5**
 
 **Competition 2 - Bonney Lake, F 3/17 to U 3/19**
+
+### Logitech Gaming Controller F310 - Button Layout:
+
+**Axes:**  
+0 = left stick X  
+1 = left stick Y (inverted)  
+2 = right stick X  
+3 = right stick Y (inverted)  
+ 
+**Buttons:**  
+1 = X, 2 = A, 3 = B, 4 = Y  
+5 = Left Bumper (LB)  
+6 = Right Bumper (RB)  
+7 = Left Trigger (LT)  
+8 = Right Trigger (RT)  
+9 = Back Button  
+10 = Start Button  
+11 = Left Stick Press (Click In)  
+12 = Right Stick Press (Click In)  
+
+**POV:**  
+0 = Up  
+90 = Right  
+180 = Down  
+270 = Left
