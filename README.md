@@ -1,8 +1,12 @@
+### Other Helpful Links
+* [FRC Control System Docs](https://docs.wpilib.org/en/stable/index.html)
+* [WPILib Java API Docs](https://first.wpi.edu/wpilib/allwpilib/docs/release/java/index.html)
+
 ### Remaining Pre-Season Meeting Dates and Goals:
 * [R 11/3](/docs/221103_mockkickoff.md) - Mock Kickoff. Design robot, then prepare code framework.  
 There is no meeting on S 11/5. You may attend the open house on U 11/6, from 2 to 4 pm.
-* R 11/10 - Loops, control structures, and logic.
-* S 11/12 - Components 1: Compressor, Solenoid, Camera
+* [R 11/10](/docs/221110_controlstructures.md) - Loops, control structures, and logic.
+* [S 11/12](/docs/221112_components1.md) - Components 1: Compressor, Solenoid, Camera
 * R 11/17 - Components 2: Gyroscope/IMU, Ultrasonic Distance Sensor
 * S 11/19 - Components 3: LIDAR, Limit Switches. Explore autonomous programming.  
 We take a break for the week of Thanksgiving. No meetings on R 11/24 or S 11/26.  
