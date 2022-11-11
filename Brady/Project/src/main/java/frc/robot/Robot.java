@@ -25,6 +25,9 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_left = new PWMVictorSPX(0);
+    m_right= new PWMVictorSPX(1);
+    c_driver = new Joystick(0);
+    c_shooter = new Joystick(1);
   }
 
   @Override
@@ -44,6 +47,13 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopPeriodic() {
+    if(c_driver.getRawButton(2)){
+      m_right.set(0.5);
+    }
+    else{
+      m_right.set(0);
+    }
+    
     m_left.set(c_driver.getRawAxis(0));
     m_right.set(c_driver.getRawAxis(2));
   }
