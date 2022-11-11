@@ -69,3 +69,12 @@ boolean myBool = ((a && b) || (!c || b)) && (!a || !c)
 ```
 
 As Kellen noted, `teleopPeriodic()` operates periodically, so omitting an `else` branch may cause the robot to hold at a specific value. As long as you know what you're doing, this may not be an issue.
+
+A good methodd to use with control structures are `boolean Joystick.getRawButton(int button)`. You can also use similar methods to define a toggle:
+```java
+boolean flag;
+
+if (c_driver.getRawButtonPressed(2)) {
+    flag = !flag; // when the button is pressed (holding doesn't matter), invert the state of the flag
+}
+```
