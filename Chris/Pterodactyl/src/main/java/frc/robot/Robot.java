@@ -23,7 +23,7 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     m_left.set(c_driver.getRawAxis(0));
-    // WRITE CODE SO THAT THE RIGHT MOTOR ACTIVATES IF BUTTON 2 IS HELD DOWN ON THE DRIVER CONTROLLER
-    m_right.set(c_driver.getRawAxis(2));
+    if (c_driver.getRawButton(2))
+      m_right.set(c_driver.getRawAxis(2));
   }
 }
