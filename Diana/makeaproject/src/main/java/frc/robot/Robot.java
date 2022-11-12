@@ -25,7 +25,11 @@ public class Robot extends TimedRobot {
   Joystick control;
   
   @Override
-  public void robotInit() {}
+  public void robotInit() {
+    m_left = new PWMVictorSPX(0);
+    m_right = new PWMVictorSPX(1);
+    control = new Joystick(0);
+  }
 
   @Override
   public void robotPeriodic() {}
@@ -42,9 +46,10 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
 
-    if (control.getX() > 0.0) {
-      m_left.set(0.5); // can go from -1 to 1
-    }
+    
+    m_left.set(control.getRawAxis(0)); // can go from -1 to 1
+    m_left.set(control.getRawAxis(1));
+    //m_right.set();
     
 
 
