@@ -7,6 +7,12 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
+import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.cscore.CameraServerCvJNI;
+import edu.wpi.first.wpilibj.DigitalInput;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -23,12 +29,23 @@ public class Robot extends TimedRobot {
   PWMVictorSPX m_left;
   PWMVictorSPX m_right;
   Joystick control;
+  Compressor compressor;
+  Solenoid solenoidl;
+  Solenoid solenoidr;
+  DigitalInput swich;
+  
   
   @Override
   public void robotInit() {
     m_left = new PWMVictorSPX(0);
     m_right = new PWMVictorSPX(1);
     control = new Joystick(0);
+    compressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
+    solenoidl = new Solenoid(PneumaticsModuleType.CTREPCM, 1);
+    solenoidr = new Solenoid(PneumaticsModuleType.CTREPCM, 0);
+    compressor.enableDigital();
+    CameraServer.startAutomaticCapture("camera", 0);
+    swich = new DigitalInput(2);
   }
 
   @Override
@@ -50,6 +67,17 @@ public class Robot extends TimedRobot {
     m_left.set(control.getRawAxis(0)); // can go from -1 to 1
     m_left.set(control.getRawAxis(1));
     //m_right.set();
+    
+    if (control.getRawButtonPressed(1)) {
+      solenoidr.set(control.getRawButtonPressed(1));
+      solenoidl.set(control.getRawButtonPressed(1));
+    }
+
+    if (swich.get()) {
+      solenoidl.set(swich.get());
+      solenoidr.set(swich.get());
+    }
+    
     
 
 
