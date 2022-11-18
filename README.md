@@ -10,16 +10,15 @@ There is no meeting on S 11/5. You may attend the open house on U 11/6, from 2 t
 * [R 11/10](/docs/221110_controlstructures.md) - Loops, control structures, and logic.
 * [S 11/12](/docs/221112_components1.md) - Components 1: Compressor, Solenoid, Camera
 * [R 11/17](/docs/221117_components2.md) - Components 2: Gyroscope/IMU, Ultrasonic Distance Sensor
-* S 11/19 - Components 3: LIDAR, Limit Switches. Explore autonomous programming.  
-We take a break for the week of Thanksgiving. No meetings on R 11/24 or S 11/26.  
+* Asynchronous - Intro to autonomous programming.  
+Our S 11/19 meeting is moved to F 11/18. We take a break for the week of Thanksgiving. No meetings on R 11/24 or S 11/26.  
 * R 12/1 - SendableChooser, Vendor Libraries  
-The following meetings are partially dependent on the practice bot being finished.  
-* S 12/3 - Program and test practice bot.
+The following meetings are partially dependent on the practice bot being finished. Our S 12/3 meeting may be canceled.  
 * R 12/8 - Program and test practice bot.
 * S 12/10 - Driver practice.
 * R 12/15 - Driver tryouts.  
 There are no meetings during Christmas break.  
-If we cannot do driver tryouts before Christmas, we will have a meeting prior to kickoff on R 1/5.
+If we cannot do driver tryouts before Christmas, we may have a meeting prior to kickoff, or we will conduct tryouts in late season.
 
 ### Season Information
 **2023 Kickoff - S 1/7, 10 AM to 4 PM**  
