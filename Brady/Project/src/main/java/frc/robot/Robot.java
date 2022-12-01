@@ -2,7 +2,7 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
- package frc.robot;
+package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
  import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX;
@@ -35,7 +35,7 @@ public class Robot extends TimedRobot {
     m_right= new PWMVictorSPX(1);
     c_driver = new Joystick(0);
     c_shooter = new Joystick(1);
-    m_right.setInverted(true);
+    m_right.setInverted(true); 
 //--------------------------------------------------------------
     m_compressor=new Compressor(0,PneumaticsModuleType.CTREPCM);
     s_left=new Solenoid(PneumaticsModuleType.CTREPCM,0);
@@ -69,15 +69,14 @@ public class Robot extends TimedRobot {
     //   m_right.set(0.5);
     //   m_left.set(0.5);
     // }
-    // ------------------------------------------------------
     // else{
-    //   m_left.set(c_driver.getRawAxis(0));
-    //   m_right.set(c_driver.getRawAxis(2)); 
-      //This is literally all you need to get the motors to work with the joystick. Sets motors (m_left or m_right) to whatever the joystick (c_driver or c_shooter) is.  
-
+    //  m_left.set(c_driver.getRawAxis(0));
+    //  m_right.set(c_driver.getRawAxis(2)); 
+    //  This is literally all you need to get the motors to work with the joystick. Sets motors (m_left or m_right) to whatever the joystick (c_driver or c_shooter) is.  
+    // }
       // if (c_driver.getRawButton(1)){
       //   s_right.set(true);
-      // }
+       //}
       // else if(c_driver.getRawButton(2)){
       //   s_right.set(false);
       // }
@@ -88,8 +87,17 @@ public class Robot extends TimedRobot {
       // So !s_right.get means whatever s_right is NOT
       // }
     //}
-    if (m_switch.get()) {
-      s_right.set(true);
+    //if (m_switch.get()) {
+     // s_right.set(true);
+    
+    //}
+    m_left.set(c_driver.getRawAxis(0));
+    m_right.set(c_driver.getRawAxis(2));
+    if (c_driver.getRawButton(5)){
+      s_left.set(!s_left.get());
+    }
+    if (c_driver.getRawButton(6)){
+      s_right.set(!s_right.get());
     }
   }
 
@@ -112,3 +120,6 @@ public class Robot extends TimedRobot {
   public void simulationPeriodic(){}
 }
 
+//Bind left and right treads to L/R joysticks respectively
+// Bind solenoi9ds to L/R bumpers as togggles. Buttons 5 and 6 respectively.
+//Create a camera instence. 
