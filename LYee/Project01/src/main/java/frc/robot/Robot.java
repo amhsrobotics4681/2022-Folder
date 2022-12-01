@@ -76,7 +76,7 @@ public class Robot extends TimedRobot {
     } else if (!m_switch.get()){
       s_left.set(false);
     }
-  }
+    
 
   @Override
   public void disabledInit() {}
