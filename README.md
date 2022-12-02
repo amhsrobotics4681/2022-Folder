@@ -12,15 +12,16 @@ There is no meeting on S 11/5. You may attend the open house on U 11/6, from 2 t
 * [R 11/17](/docs/221117_components2.md) - Components 2: Review pneumatics and camera. Limit switch.
 * [Asynchronous](/docs/221100_autonomous.md) - Intro to autonomous programming.  
 Our S 11/19 meeting is moved to F 11/18. We take a break for the week of Thanksgiving. No meetings on R 11/24 or S 11/26.  
-* R 12/1 - Autonomous  
-Our S 12/3 meeting may be canceled.  
+* [R 12/1](/docs/221202_autonomous2.md) - Autonomous, Gyroscope  
+Our S 12/3 meeting is moved to F 12/2.  
 * R 12/8 - SendableChooser, Vendor Libraries
 * S 12/10 - Coding the practice bot, if available.
-* R 12/15 - Driver tryouts.  
+* R 12/15 - Any remaining topics or activities.  
 There are no meetings during Christmas break.  
-If we cannot do driver tryouts before Christmas, we may have a meeting prior to kickoff, or we will conduct tryouts in late season.
 
-Postponed Indefinitely: Gyroscope/IMU, Distance Sensors
+It is highly likely we will host driver tryouts during the season, with the competition robot.
+
+Postponed Indefinitely: Distance Sensors
 
 ### Season Information
 **2023 Kickoff - S 1/7, 10 AM to 4 PM**  
