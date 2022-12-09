@@ -1,8 +1,8 @@
-**Coding Challenge!** You have all the tools you need to write a robot program, so give it your best shot. Specification can be found [here](/docs/221117_challenge.md).
+**Coding the Wheelchair Bot!** You have all the tools you need to write a robot program, so give it your best shot. Specification can be found [here](/docs/221117_challenge.md).
 
 ### Other Helpful Links
 * [FRC Control System Docs](https://docs.wpilib.org/en/stable/index.html)
-* [WPILib Java API Docs](https://first.wpi.edu/wpilib/allwpilib/docs/release/java/index.html)
+* [WPILib Java API Docs](https://github.wpilib.org/allwpilib/docs/release/java/index.html)
 
 ### Remaining Pre-Season Meeting Dates and Goals:
 * [R 11/3](/docs/221103_mockkickoff.md) - Mock Kickoff. Design robot, then prepare code framework.  
@@ -10,11 +10,11 @@ There is no meeting on S 11/5. You may attend the open house on U 11/6, from 2 t
 * [R 11/10](/docs/221110_controlstructures.md) - Loops, control structures, and logic.
 * [S 11/12](/docs/221112_components1.md) - Components 1: Compressor, Solenoid, Camera
 * [R 11/17](/docs/221117_components2.md) - Components 2: Review pneumatics and camera. Limit switch.
-* [Asynchronous](/docs/221100_autonomous.md) - Intro to autonomous programming.  
+* [Asynchronous](/docs/221190_autonomous.md) - Intro to autonomous programming.  
 Our S 11/19 meeting is moved to F 11/18. We take a break for the week of Thanksgiving. No meetings on R 11/24 or S 11/26.  
 * [R 12/1](/docs/221202_autonomous2.md) - Autonomous, Gyroscope  
 Our S 12/3 meeting is moved to F 12/2.  
-* R 12/8 - SendableChooser, Vendor Libraries
+* [R 12/8](/docs/221208_autonomous3.md) - SendableChooser, Vendor Libraries
 * S 12/10 - Coding the practice bot, if available.
 * R 12/15 - Any remaining topics or activities.  
 There are no meetings during Christmas break.  
@@ -24,7 +24,7 @@ It is highly likely we will host driver tryouts during the season, with the comp
 Postponed Indefinitely: Distance Sensors
 
 ### Season Information
-**2023 Kickoff - S 1/7, 10 AM to 4 PM**  
+**2023 Kickoff - S 1/7, 10 AM to (unknown)**  
 We will meet together at AMHS and watch the game reveal together. Next, we set goals for ourselves, and design a robot according to those goals. The meeting schedule is undecided at this time, but we anticipate working T, R, S prior to finals. We may increase to working up to 6 days a week between finals and our first compeition.
 
 **Competition 1 - Glacier Peak, F 3/3 to U 3/5**
