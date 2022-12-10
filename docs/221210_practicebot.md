@@ -1,0 +1,3 @@
+In the interest of time, you can pull basic code to drive the practice bot from [inside my folder](/Chris/PracticeBot/src/main/java/frc/robot/Robot.java) in the repository. Some values like negative signs and inversions may need to be adjusted for the robot, but this code theoretically works.
+
+You can also find instructions for imaging the roboRIO [in the FRC documentation](https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-3/imaging-your-roborio.html). Connecting to the radio is potentially not possible, so if it doesn't work when you try it, just run the robot via Ethernet cable.
