@@ -1,4 +1,6 @@
-**Coding the Wheelchair Bot!** You have all the tools you need to write a robot program, so give it your best shot. Specification can be found [here](/docs/221117_challenge.md).
+**On Saturday, we will move to a 2023 repository. This repository will be archived. Hang tight!**
+
+Coding the Wheelchair Bot: You have all the tools you need to write a robot program, so give it your best shot. Specification can be found [here](/docs/221117_challenge.md).
 
 ### Other Helpful Links
 * [FRC Control System Docs](https://docs.wpilib.org/en/stable/index.html)
@@ -15,17 +17,17 @@ Our S 11/19 meeting is moved to F 11/18. We take a break for the week of Thanksg
 * [R 12/1](/docs/221202_autonomous2.md) - Autonomous, Gyroscope  
 Our S 12/3 meeting is moved to F 12/2.  
 * [R 12/8](/docs/221208_autonomous3.md) - SendableChooser, Vendor Libraries
-* S 12/10 - Coding the practice bot, if available.
-* R 12/15 - Any remaining topics or activities.  
+* S 12/10 - No programming lesson today.
+* R 12/15 - Writing drivetrain and distance sensor code. See [the main robot file](/Chris/PracticeBot/src/main/java/frc/robot/Robot.java).  
 There are no meetings during Christmas break.  
 
-It is highly likely we will host driver tryouts during the season, with the competition robot.
-
-Postponed Indefinitely: Distance Sensors
+We will host driver tryouts during the season, with the competition robot.
 
 ### Season Information
-**2023 Kickoff - S 1/7, 10 AM to (unknown)**  
+**2023 Kickoff - S 1/7, 9 AM to 3 PM**  
 We will meet together at AMHS and watch the game reveal together. Next, we set goals for ourselves, and design a robot according to those goals. The meeting schedule is undecided at this time, but we anticipate working T, R, S prior to finals. We may increase to working up to 6 days a week between finals and our first compeition.
+
+As you may have seen, the 2023 WPILib VS Code was released. We will download that, the game tools, the new roboRIO image, and any other software we may need for the season. A new repository will be created as well, and with luck, we can write code into it starting the following week.
 
 **Competition 1 - Glacier Peak, F 3/3 to U 3/5**
 
